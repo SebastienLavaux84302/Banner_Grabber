@@ -23,5 +23,8 @@ Dans l'exemple ci-dessus, l'hôte cible est 123.123.123.123. Vous pouvez le remp
 
 ## Note
 
-    Ce script est à des fins éducatives et de recherche seulement. Ne l'utilisez pas pour des activités illégales. Il est de la responsabilité de l'utilisateur final de respecter toutes les lois locales, nationales et internationales applicables. Les développeurs n'assument aucune responsabilité et ne sont pas responsables de toute mauvaise utilisation ou dommage causé par ce programme.
+    Ce script est à des fins éducatives et de recherche seulement. Ne l'utilisez pas pour des activités illégales. 
+    Il est de la responsabilité de l'utilisateur final de respecter toutes les lois locales, nationales et internationales applicables. 
+    Les développeurs n'assument aucune responsabilité et ne sont pas responsables de toute mauvaise 
+    utilisation ou dommage causé par ce programme.
    
