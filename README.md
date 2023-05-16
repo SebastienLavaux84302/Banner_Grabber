@@ -1,5 +1,5 @@
-#ScannerGrabber
-##Description
+# ScannerGrabber
+## Description
 ScannerGrabber est un outil Python simple et efficace qui permet de scanner les ports ouverts d'un hôte spécifié et d'obtenir des informations sur ces ports. Il utilise les sockets Python pour se connecter à chaque port de l'hôte et affiche les résultats directement à l'écran.
 
 ##Fonctionnalités
