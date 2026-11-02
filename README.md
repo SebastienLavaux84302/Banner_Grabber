@@ -1,30 +1,36 @@
-# ScannerGrabber
-## Description
-ScannerGrabber est un outil Python simple et efficace qui permet de scanner les ports ouverts d'un hôte spécifié et d'obtenir des informations sur ces ports. Il utilise les sockets Python pour se connecter à chaque port de l'hôte et affiche les résultats directement à l'écran.
+# Banner Grabber
 
-## Fonctionnalités
+Prototype Python d'exploration réseau : il teste une liste fixe de ports TCP sur un hôte, puis tente de récupérer une réponse des services accessibles. Ce projet permet d'expérimenter les sockets et les délais réseau.
 
-    Scan des ports ouverts d'un hôte.
-    Affiche le nom du service correspondant à chaque port ouvert.
-    Tente d'envoyer un message à chaque port ouvert et d'afficher la réponse, si disponible.
+## Fonctionnement
 
-## Utilisation
+1. Le script tente une connexion TCP sur les ports définis dans `Useful_ports`.
+2. Il associe aux ports ouverts les noms figurant dans `Description_ports` : ce sont des étiquettes statiques, pas une identification certaine du service.
+3. Il ouvre une nouvelle connexion vers chaque port détecté, envoie `a\r\n\r\n` et tente de lire une réponse.
 
-Pour utiliser ScannerGrabber, il suffit de lancer le script Python et de lui fournir l'adresse IP ou le nom d'hôte de la cible. Les ports à scanner sont définis dans le script et peuvent être personnalisés selon vos besoins.
+## Utilisation dans un lab autorisé
 
-```python
-def main():
-    ScannerGrabber("123.123.123.123")
+Prérequis : Python 3 ; le script utilise uniquement la bibliothèque standard.
 
-if (__name__ == '__main__'):
-    main()
-```
-Dans l'exemple ci-dessus, l'hôte cible est 123.123.123.123. Vous pouvez le remplacer par l'adresse IP ou le nom d'hôte de votre choix.
+1. Ouvrir `ScannerGrabber.py` et remplacer `X.X.X.X` dans `main()` par l'adresse IPv4 ou le nom d'une machine de test autorisée.
+2. Adapter au besoin les listes `Useful_ports` et `Description_ports` en conservant la correspondance entre leurs éléments.
+3. Lancer :
 
-## Note
+   ```bash
+   python3 ScannerGrabber.py
+   ```
 
-    Ce script est à des fins éducatives et de recherche seulement. Ne l'utilisez pas pour des activités illégales. 
-    Il est de la responsabilité de l'utilisateur final de respecter toutes les lois locales, nationales et internationales applicables. 
-    Les développeurs n'assument aucune responsabilité et ne sont pas responsables de toute mauvaise 
-    utilisation ou dommage causé par ce programme.
-   
+L'hôte est actuellement renseigné dans le code : le script ne prend pas encore d'argument en ligne de commande. Le fichier `TCP_PORT.txt` est informatif et n'est pas lu par le script.
+
+## Limites
+
+- Connexions IPv4 et TCP uniquement ; la liste de ports est prédéfinie.
+- Le message envoyé est générique : certains services ne répondront pas ou peuvent le rejeter. Les protocoles applicatifs et TLS ne sont pas négociés.
+- Les délais sont courts et le script est séquentiel ; un port non détecté n'est pas nécessairement fermé.
+- C'est un prototype pédagogique, pas un scanner complet ni un outil de diagnostic de production.
+
+Tester uniquement des systèmes pour lesquels une autorisation explicite a été obtenue : le script établit des connexions et envoie des données aux services détectés.
+
+## Documentation
+
+Cette présentation du projet existant a été clarifiée avec l'assistance de **Codex (OpenAI)**. Le code reste à améliorer et à tester davantage.
