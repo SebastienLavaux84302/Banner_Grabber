@@ -2,6 +2,8 @@
 
 Prototype Python d'exploration réseau : il teste une liste fixe de ports TCP sur un hôte, puis tente de récupérer une réponse des services accessibles. Ce projet permet d'expérimenter les sockets et les délais réseau.
 
+Cette version est un fork de [Groot-me/Banner_Grabber](https://github.com/Groot-me/Banner_Grabber).
+
 ## Fonctionnement
 
 1. Le script tente une connexion TCP sur les ports définis dans `Useful_ports`.
